@@ -12,6 +12,6 @@
 #' install_pygrok()
 #' }
 install_pygrok <- function(method = "auto", conda = "auto") {
-  reticulate::py_install("pygrok", method = method, conda = conda)
+  reticulate::py_install("pygrok", method = method, conda = conda, pip = TRUE)
   invisible(NULL)
 }

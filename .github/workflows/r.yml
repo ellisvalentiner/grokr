@@ -39,9 +39,8 @@ jobs:
       - name: Install Python
         run: |
           remotes::install_github("rstudio/reticulate")
-          # reticulate::install_miniconda()
-          # reticulate::conda_create("r-reticulate")
-          reticulate::virtualenv_create("r-reticulate")
+          reticulate::install_miniconda()
+          reticulate::conda_create("r-reticulate")
           reticulate::py_discover_config()
         shell: Rscript {0}
 
