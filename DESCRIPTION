@@ -1,13 +1,12 @@
 Package: grokr
-Title: What the Package Does (One Line, Title Case)
+Title: Grok pattern matching
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Ellis",
+           family = "Valentiner",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+           email = "ellis.valentiner@gmail.com")
+Description: Grok pattern matching library for R.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -17,3 +16,7 @@ Imports:
     reticulate
 Suggests: 
     testthat
+Collate:
+  'install.R'
+  'package.R'
+  'grok.R'

@@ -16,16 +16,17 @@ knitr::opts_chunk$set(
 # grokr
 
 <!-- badges: start -->
+[![R build status](https://github.com/ellisvalentiner/grokr/workflows/R-CMD-check/badge.svg)](https://github.com/ellisvalentiner/grokr/actions)
 <!-- badges: end -->
 
-The goal of grokr is to ...
+grokr provides grok pattern matching for R.
 
 ## Installation
 
-You can install the released version of grokr from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of grokr from [Github](https://github.com/ellisvalentiner/grokr) with:
 
 ``` r
-install.packages("grokr")
+devtools::install_github("ellisvalentiner/grokr")
 ```
 
 ## Example
@@ -34,21 +35,8 @@ This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
 library(grokr)
-## basic example code
+
+g <- grok("Hello %{WORD:name}")
+g$match("Hello world!")
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
