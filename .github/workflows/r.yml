@@ -44,6 +44,12 @@ jobs:
           reticulate::py_discover_config()
         shell: Rscript {0}
 
+      - name: Install pygrok
+        run: |
+          remotes::install_local()
+          grokr::install_pygrok()
+        shell: Rscript {0}
+
       - name: Check
         run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
         shell: Rscript {0}

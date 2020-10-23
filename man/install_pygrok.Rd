@@ -11,6 +11,9 @@ install_pygrok(method = "auto", conda = "auto")
 
 \item{conda}{Path to conda, passed to py_install}
 }
+\value{
+Invisible \code{NULL}, called for side effects
+}
 \description{
 Install pygrok
 }
