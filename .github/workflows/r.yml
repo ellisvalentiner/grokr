@@ -30,13 +30,9 @@ jobs:
         with:
           r-version: ${{ matrix.r-version }}
 
-      - name: Set up environment
+      - name: Install dependencies
         env:
           GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
-        run: |
-          echo "GITHUB_PAT=${GITHUB_PAT}" >> .Renviron
-
-      - name: Install dependencies
         run: |
           install.packages(c("remotes", "rcmdcheck"))
           remotes::install_deps(dependencies = TRUE)
