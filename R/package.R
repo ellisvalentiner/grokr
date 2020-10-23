@@ -2,9 +2,9 @@
 #'
 #' Uses the reticulate framework to access the pygrok module
 #'
-#' @export grokr
-grokr <- NULL
+#' @export pygrok
+pygrok <- NULL
 
 .onLoad <- function(libname, pkgname) {
-  grokr <<- reticulate::import("pygrok", delay_load = TRUE)
+  pygrok <<- reticulate::import("pygrok", delay_load = TRUE)
 }

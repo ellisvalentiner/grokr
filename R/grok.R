@@ -7,4 +7,7 @@
 #' @return list with variable names specified in pattern and their corresponding values
 #'
 #' @export grok
-grok <- grokr::grokr$Grok
+grok <- function(pattern="", custom_patterns_dir=NULL, custom_patterns_list=reticulate::dict()) {
+  pygrok$Grok(pattern, custom_patterns_dir, custom_patterns_list)
+}
+
