@@ -18,7 +18,8 @@ grok <- function(pattern="", custom_patterns_dir=NULL, custom_patterns_list=reti
 #' @param custom_patterns_dir used to pass custom patterns
 #' @param custom_patterns_list used to pass custom patterns
 #'
-#' @return
+#' @return list with variable names specified in pattern and their corresponding values
+#'
 #' @export grok_match
 grok_match <- function(string, pattern="", custom_patterns_dir=NULL, custom_patterns_list=reticulate::dict()) {
   g <- pygrok$Grok(pattern, custom_patterns_dir, custom_patterns_list)

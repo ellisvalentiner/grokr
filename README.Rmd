@@ -42,6 +42,13 @@ library(grokr)
 g <- grok("Hello %{WORD:name}")
 g$match("Hello world!")
 
-x <- c("55.3.244.1 GET /index.html 15824 0.043", "55.3.244.1 GET /index.html 15824 0.043")
-grok_match(x, "%{IP:client} %{WORD:method} %{URIPATHPARAM:request} %{NUMBER:bytes} %{NUMBER:duration}")
+x <- c(
+  "55.3.244.1 GET /index.html 15824 0.043",
+  "127.0.0.1 POST /index.html 43658 1.234"
+)
+
+grok_match(
+  string = x,
+  pattern = "%{IP:client} %{WORD:method} %{URIPATHPARAM:request} %{NUMBER:bytes} %{NUMBER:duration}"
+)
 ```

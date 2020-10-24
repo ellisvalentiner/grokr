@@ -21,7 +21,7 @@ grok_match(
 \item{custom_patterns_list}{used to pass custom patterns}
 }
 \value{
-
+list with variable names specified in pattern and their corresponding values
 }
 \description{
 grok_match

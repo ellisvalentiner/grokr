@@ -34,8 +34,15 @@ This is a basic example which shows you how to solve a common problem:
     #> $name
     #> [1] "world"
 
-    x <- c("55.3.244.1 GET /index.html 15824 0.043", "55.3.244.1 GET /index.html 15824 0.043")
-    grok_match(x, "%{IP:client} %{WORD:method} %{URIPATHPARAM:request} %{NUMBER:bytes} %{NUMBER:duration}")
+    x <- c(
+      "55.3.244.1 GET /index.html 15824 0.043",
+      "127.0.0.1 POST /index.html 43658 1.234"
+    )
+
+    grok_match(
+      string = x,
+      pattern = "%{IP:client} %{WORD:method} %{URIPATHPARAM:request} %{NUMBER:bytes} %{NUMBER:duration}"
+    )
     #> [[1]]
     #> [[1]]$client
     #> [1] "55.3.244.1"
@@ -55,16 +62,16 @@ This is a basic example which shows you how to solve a common problem:
     #> 
     #> [[2]]
     #> [[2]]$client
-    #> [1] "55.3.244.1"
+    #> [1] "127.0.0.1"
     #> 
     #> [[2]]$method
-    #> [1] "GET"
+    #> [1] "POST"
     #> 
     #> [[2]]$request
     #> [1] "/index.html"
     #> 
     #> [[2]]$bytes
-    #> [1] "15824"
+    #> [1] "43658"
     #> 
     #> [[2]]$duration
-    #> [1] "0.043"
+    #> [1] "1.234"
