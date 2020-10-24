@@ -1,11 +1,19 @@
 Package: grokr
 Title: Grok pattern matching
 Version: 0.0.0.9000
-Authors@R: 
+Authors@R: c(
     person(given = "Ellis",
            family = "Valentiner",
            role = c("aut", "cre"),
-           email = "ellis.valentiner@gmail.com")
+           email = "ellis.valentiner@gmail.com"),
+    person(given = "Gary",
+           family = "Gao",
+           role = c("aut"),
+           comment = "pygrok library"),
+    person(given = "Jordan",
+           family = "Sissel",
+           role = c("aut"),
+           comment = "Grok"))
 Description: Grok pattern matching library for R.
 License: MIT + file LICENSE
 Encoding: UTF-8
