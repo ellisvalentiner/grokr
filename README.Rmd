@@ -1,5 +1,7 @@
 ---
 output: github_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -17,6 +19,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![R build status](https://github.com/ellisvalentiner/grokr/workflows/R-CMD-check/badge.svg)](https://github.com/ellisvalentiner/grokr/actions)
+[![Codecov test coverage](https://codecov.io/gh/ellisvalentiner/grokr/branch/master/graph/badge.svg)](https://codecov.io/gh/ellisvalentiner/grokr?branch=master)
 <!-- badges: end -->
 
 grokr provides grok pattern matching for R.
@@ -26,7 +29,7 @@ grokr provides grok pattern matching for R.
 You can install the released version of grokr from [Github](https://github.com/ellisvalentiner/grokr) with:
 
 ``` r
-devtools::install_github("ellisvalentiner/grokr")
+remotes::install_github("ellisvalentiner/grokr")
 ```
 
 ## Example
@@ -38,5 +41,7 @@ library(grokr)
 
 g <- grok("Hello %{WORD:name}")
 g$match("Hello world!")
-```
 
+x <- c("55.3.244.1 GET /index.html 15824 0.043", "55.3.244.1 GET /index.html 15824 0.043")
+grok_match(x, "%{IP:client} %{WORD:method} %{URIPATHPARAM:request} %{NUMBER:bytes} %{NUMBER:duration}")
+```
